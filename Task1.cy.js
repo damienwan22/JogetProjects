@@ -165,7 +165,7 @@ describe('Joget Cloud Partners Page', () => {
 })
 
 describe('Form Submission', () => {
-    it('Cannot be submitted until all required fields are filled.', () => {
+    it('Cannoet be submitted until all required fields ar filled.', () => {
 
       // Visting the Website
       cy.visit('https://www.jogetcloud.com/partners.html')
@@ -182,14 +182,14 @@ describe('Form Submission', () => {
 
 
       //Entering values into the fields
-      cy.xpath("//input[@id='input-854780788815326819']").type('Damien')
-      cy.xpath("//input[@id='input-854780788815326819-1']").type('Wan')
-      cy.xpath("//input[@id='input-491276055781529145']").type('damienwan@gmail.com')
-      cy.xpath("//input[@id='input-672454182976339477']").type('Binge')
-      cy.xpath("//textarea[@id='input-528841581417962198']").type('Some text')
+      cy.xpath("//input[@placeholder='First']").type('Damien')
+      cy.xpath("//input[@placeholder='Last']").type('Wan')
+      cy.xpath("//input[@name='_u672454182976339477']").type('damienwan@gmail.com')
+      cy.xpath("//input[@name='_u491276055781529145']").type('Binge')
+      cy.xpath("//textarea[@name='_u528841581417962198']").type('Some text')
  
       // Checking if the Select option was selected
-      cy.get('#input-667693140168453864').should('not.have.value')
+      cy.get("//select[@name='_u667693140168453864']").should('not.have.value')
 
       //Verify that the button would be clicked on after fields are filled
       cy.get('form > div > a').click()
